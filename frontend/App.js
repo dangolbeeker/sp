@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -18,6 +17,10 @@ import {
   View,
 } from 'react-native';
 
-
+const App = () => {
+  return (
+    <h2>App</h2>
+  )
+}
 
 export default App;

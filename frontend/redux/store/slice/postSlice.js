@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: 0,
+postImage: [],
+postBody: [],
+postStatus: [],
 }
 
 export const counterSlice = createSlice({
@@ -9,20 +11,32 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     
-    addPost: (state, action) => {
-      state.value += action.payload
+    addPost(state, action) {
+        state.isLoading = false;
+        state.addPost = action.payload;
     },
-    editPost: (state, action) => {
-        state.value += action.payload
+    editPost(state, action) {
+        state.isLoading = false;
+        state.editPost = action.payload;
     },
-    deletePost: (state, action) => {
-        state.value += action.payload
+    deletePost(state, action) {
+        state.isLoading = false;
+        state.deletePost = action.payload;
     },
-
+        
+        postImage(state, action) {
+            state.isLoading = false;
+            state.postImage = action.payload;
   },
-})
 
-// Action creators are generated for each case reducer function
-export const { add, edit, delete } = postSlice.actions
+    postStatus(state, action) {
+        state.isLoading = false;
+        state.postStatus = action.payload;
+  },
+}
+});
+
+
+export const { addPost, editPost, deletePost } = postSlice.actions
 
 export default postSlice.reducer

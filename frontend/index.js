@@ -5,5 +5,10 @@ import { store } from './redux/store/store'
 import { Provider } from 'react-redux'
 
 
+const RNRedux = () => (
+    <Provider store = { store }>
+      <App />
+    </Provider>
+  )
 
 AppRegistry.registerComponent(appName, () => App);
